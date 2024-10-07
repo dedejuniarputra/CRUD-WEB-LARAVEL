@@ -4,11 +4,17 @@
     <h2>Data Students</h2>
     <div class="card">
         <div class="card-header">
-            <button type="button" class="btn btn-sm btn-success">
+            <button type="button" class="btn btn-sm btn-success" onclick="window.location='{{ url('students/add') }}'">
                 <i class="fas fa-plus-circle"></i> Tambah Data
             </button>
         </div>
         <div class="card-body">
+            @if (session('msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Berhasil</strong> {{ session('msg') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <table class="table table-sm table-striped table-bordered">
                 <thead>
                     <tr>
